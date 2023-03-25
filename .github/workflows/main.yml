@@ -37,10 +37,6 @@ jobs:
           context: .
           push: true
           tags: |
-            DOCKER_USERNAME/DOCKER_HUB_REPO:latest
-            DOCKER_USERNAME/DOCKER_HUB_REPO:${{ github.sha }}
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_REPO }}
+            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_HUB_REPO }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_HUB_REPO }}:${{ github.sha }}
           
