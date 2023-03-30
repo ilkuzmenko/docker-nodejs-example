@@ -1,4 +1,4 @@
-# Task
+# Docker Task
 Dockerize node.js app, write my own Dockerfile. Run container with CPU and RAM restrictions. Node.js app must be on 80 port. Create Docker Hub account. Add my docker image to my public repository. Write used CLI commands to README.md.
 
 ## Build and run
@@ -39,3 +39,17 @@ Push updated image to the Hub <br/>
 
 List the Docker images that you have pulled from Docker Hub <br/>
 `docker images`
+
+# Kubernetes Task
+Create a Deployment from the docker container. The pod should have nginx before nodejs (work as a reverse proxy). Be sure to do a liveness probe (httpget). Run 3 copies of the application.
+
+## Commands kubectl
+
+To apply the Deployment configuration<br/>
+`kubectl apply -f deployment.yaml`
+
+To get one of the running pods <br/>
+`kubectl get pods -l app=app-name`
+
+To delete Deployment from your Kubernetes cluster<br/>
+`kubectl delete deploy app-deployment`
